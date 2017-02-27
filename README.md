@@ -13,14 +13,14 @@ mysql
 This API behaves like the REST API.  
 For example:  
   
-There is a customer table, you will make the api like this.
+There is a customer table, you will make the api like this.  
 1. Generate customer model and customers controller.
 ```
 rails g model customer name:string deleted_at:timestamp
 rails g controller customers
 ```
 
-2. Edit app/models/customer.rb.
+1. Edit app/models/customer.rb.
 ```
 class Customer < ApplicationRecord
     include FindDefault
@@ -28,24 +28,24 @@ class Customer < ApplicationRecord
 end
 ```
 
-3. Edit app/controllers/customers_controller.rb.
+1. Edit app/controllers/customers_controller.rb.
 ```
 class CustomersController < ApplicationController
     include Crud
 end
 ```
 
-4. Open config/routes.rb and add this sentence.
+1. Open config/routes.rb and add this sentence.
 ```
   resources :customers 
 ```
 
-5. Start rails!
+1. Start rails!
 ```
   rails s
 ```
 
-6. Open this URL.
+1. Open this URL.
 ```
   http://localhost:3000/customers
 ```
@@ -68,11 +68,11 @@ http://localhost:3000/customers?name_cont=customer&pp=2&p=1
 1. Install gems  
 `bundle install`
 
-2. Create develop-database and test-database  
+1. Create develop-database and test-database  
 `rails db:create`
 
-3. DB migrate  
+1. DB migrate  
 `rails db:migrate`
 
-4. Generate seeds  
+1. Generate seeds  
 `rails db:seed_fu`
