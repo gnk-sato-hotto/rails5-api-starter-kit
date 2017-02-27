@@ -14,13 +14,13 @@ This API behaves like the REST API.
 For example:  
   
 There is a customer table, you will make the api like this.  
-1. Generate customer model and customers controller.
+- Generate customer model and customers controller.
 ```
 rails g model customer name:string deleted_at:timestamp
 rails g controller customers
 ```
 
-1. Edit app/models/customer.rb.
+- Edit app/models/customer.rb.
 ```
 class Customer < ApplicationRecord
     include FindDefault
@@ -28,24 +28,24 @@ class Customer < ApplicationRecord
 end
 ```
 
-1. Edit app/controllers/customers_controller.rb.
+- Edit app/controllers/customers_controller.rb.
 ```
 class CustomersController < ApplicationController
     include Crud
 end
 ```
 
-1. Open config/routes.rb and add this sentence.
+- Open config/routes.rb and add this sentence.
 ```
   resources :customers 
 ```
 
-1. Start rails!
+- Start rails!
 ```
   rails s
 ```
 
-1. Open this URL.
+- Open this URL.
 ```
   http://localhost:3000/customers
 ```
@@ -65,14 +65,14 @@ http://localhost:3000/customers?name_cont=customer&pp=2&p=1
 
 # To run
 
-1. Install gems  
+- Install gems  
 `bundle install`
 
-1. Create develop-database and test-database  
+- Create develop-database and test-database  
 `rails db:create`
 
-1. DB migrate  
+- DB migrate  
 `rails db:migrate`
 
-1. Generate seeds  
+- Generate seeds  
 `rails db:seed_fu`
