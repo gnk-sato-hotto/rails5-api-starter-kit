@@ -45,7 +45,7 @@ module Crud
         @page       = params[:p]  ? params[:p].to_i  : 1
         @per_page   = params[:pp] ? params[:pp].to_i : 100
         params[:s] ||= "id desc"
-        params[:s] = params[:s].split(",") rescue params[:s]
+        params[:s] = params[:s].split(",").join(" ") rescue params[:s]
         instance_variable_set(
           "@#{table_name}",
           clazz.search(params).result.page(@page).per(@per_page)
