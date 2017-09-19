@@ -94,4 +94,6 @@ gem 'seed-fu', git: 'https://github.com/mbleigh/seed-fu'
 # Utils
 # ############################################################
 gem 'kaminari'
-
+gem 'nkrb'
+gem 'whenever'
+gem 'business_time'
